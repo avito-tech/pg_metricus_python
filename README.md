@@ -1,6 +1,6 @@
 # PG Metricus
 
-### INFO
+### Info
 
 pg_metricus is a script written in Python for sending metrics in the socket (Brubeck aggregator, Graphite, etc.) from NOTIFY channel.
 
@@ -8,7 +8,7 @@ It must be remembered, if a NOTIFY is executed inside a transaction, the notify 
 
 If the same channel name is signaled multiple times from the same transaction with identical payload strings, the database server can decide to deliver a single notification only. On the other hand, notifications with distinct payload strings will always be delivered as distinct notifications. Similarly, notifications from different transactions will never get folded into one notification. Except for dropping later instances of duplicate notifications, NOTIFY guarantees that notifications from the same transaction get delivered in the order they were sent. It is also guaranteed that messages from different transactions are delivered in the order in which the transactions committed.
 
-### USAGE
+### Usage
 
 Optional arguments:
 ```
@@ -33,7 +33,7 @@ Crontab
 * * * * *  pg_metricus.py -H 127.0.0.1 -P 5432 -D base -U user -W pass -A 10.9.5.164 -X 8124 -C test
 ```
 
-### FORMAT
+### Format
 
 For Brubeck aggregator:
 ```plpgsql
@@ -55,7 +55,7 @@ select pg_notify('test', format(E'%s.%s %s %s \n',
 ));
 ```
 
-### EXAMPLE
+### Example
 
 ```plpgsql
 do language plpgsql $$
