@@ -81,3 +81,11 @@ begin
 end
 $$;
 ```
+
+### Author
+
+Nikolay Vorobev (nvorobev@avito.ru)
+
+### License
+
+MIT
